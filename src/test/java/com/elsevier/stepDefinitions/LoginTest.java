@@ -14,7 +14,6 @@ import org.slf4j.LoggerFactory;
 public class LoginTest {
 
     public Logger logger = LoggerFactory.getLogger(this.getClass());
-//    private static final Logger logger = LoggerFactory.getLogger(LoginTest.class);
     WebDriver driver;
     LoginPage lp = new LoginPage();
     ReadConfig readConfig = new ReadConfig();
