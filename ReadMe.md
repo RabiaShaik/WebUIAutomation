@@ -1,16 +1,18 @@
 Excercise3:
 
 **UI Automation Tests**
-This project is for testing UI of an e-commerce web application using Java, Selenium WebDriver and cucumber. 
-Browser a bit to know more about the application
+This project is for testing UI of an e-commerce web application using Java, 
+Selenium WebDriver and cucumber. 
+Browser a bit to know more about the application : https://www.saucedemo.com/
 
 **Dependencies**
 Here are the dependencies used in the project for development & testing perspective.
-Note - All are open source project and widely available over the web. Setup the machine with below applications to test the code further.
+Note - All are open source project and widely available over the web. 
+Setup the machine with below applications to test the code further.
 
 **Tech Stack**
 Java 1.8 and above - Coding Language
-Selenium 3.141.59 - Front End Automation Test Utility
+Selenium 4.5.3 - Front End Automation Test Utility
 Maven - Dependency Management
 TestNG - Unit Testing framework for Java
 ExtentReports - Reporting framework for our tests
@@ -20,7 +22,7 @@ Log4j - Logging framework for our tests
 The below steps will get you a copy of the project up and running, on your local machine for development and testing purposes.
 
 1) Open your terminal and do a clone of this project.
-   git clone https://github.com/rabia/uiAutomation.git
+   git clone https://github.com/RabiaShaik/WebUIAutomation.git
 2) Navigate to the respective directory and run below command.
    mvn clean install
 3) Above command will build the project along with test cases.
@@ -39,20 +41,22 @@ The below steps will get you a copy of the project up and running, on your local
 
 **Project Structure:**
 
-PageObjects : This folder consists of locators and actions for the pages
-Configs : Consists of the properties which could be read from here.
-StepDefinitions : Actual test steps for the features
-Utilities : Readers to read the config file
-Resources >Features : BDD framework feature files written in plain english
-Pom.xml : Manages dependencies
-ReadMe.md : Has instruction of the project
-testNg.xml : File from which the entire tests can be run
-RunCukesTest: Runner file for cucumber which has the details of the plugins used for reporting, paths of feature and step definitions
-Logging : Logs the information so that we can debug in case of failure
+**PageObjects :** This folder consists of locators and actions for the pages
+**Configs :** Consists of the properties which could be read from here.
+**StepDefinitions :** Actual test steps for the features
+**Utilities :** Readers to read the config file
+**Resources >Features :** BDD framework feature files written in plain english
+**Pom.xml :** Manages dependencies
+**ReadMe.md :** Has instruction of the project
+**testNg.xml :** File from which the entire tests can be run
+**RunCukesTest:** Runner file for cucumber which has the details of the plugins used for reporting, 
+paths of feature and step definitions and tests can also be run from here
+**Logging :** Logs the information so that we can debug in case of failure. 
+At the moment it is logging in console. Due to some dependancy mismatch it is not writing properly to the file.
 
 **Testing**
 Ideally, the developed script is tested well on mac machine Chrome/Firefox browser.
-So, in case it does not works well then request you to first update your local installed browsers and then try to run the script. Still issues are coming, Please write back to me : jituvrma007@gmail.com
+So, in case it does not works well then request you to first update your local installed browsers and then try to run the script.
 
 **Test Reports**
 Here are a below steps to get a human readable cucumberhtml report.
@@ -63,20 +67,29 @@ Here are a below steps to get a human readable cucumberhtml report.
 4) Open the file in browser and view the results
 
 **Additional Info:**
-Taking screenshot on failed tests -> Please find the screen shots of failed test cases here "/report/screenShots". Please note that, the screenshot will also be attached to the .html report.
+**Screenshot on failed tests:** Please find the screen shots of failed test cases here "/screenshotFolder/screenShots.png". Please note that, the screenshot will also be attached to the .html report.
 
 
-Bongarcia WebDriver Manager factory -> Consumed this so that we can avoid having the necessity of physical binaries.
+**Bongarcia WebDriver Manager factory:** Consumed this so that we can avoid having the necessity of physical binaries.
 
 
-Layers like, PageObjects, Test Layer, setup and infra layers are done. Using page object pattern, data driven framework, Factory pattern to initalize the driver. After all it is just a sample project, we can design and extend this framework to scale our smoke/sanity/regression based tests.
+**Layers:** Layers like, PageObjects, Test Layer, setup and infra layers are done. Using page object pattern, data driven framework via property files, maven dependency is used to initalize the driver. 
+We can design and extend this framework to scale our smoke/sanity/regression based tests.
 
 
-Run tests in parallel mode -> Yes from "testNg.xml" file, am passing "parallel="methods" which will do this. 
-However I have kept the thread count to 1 by default. It can be easily changed inside the .xml file..
+**Parallel Mode:** Tests can be run "testNg.xml" file in parallel mode, we are passing parallel tage in pom.xml as parallel under maven surefire plugin
+which will do this. Also write a small piece of code in cukes file as follows
+//        @Override
+//        @DataProvider(parallel = true)
+//        public Object[][] scenarios(){
+//                return super.scenarios();
+//        }
+However I have kept not used it as it is a small set of scenarios.
 
 
-Ability to run tests for different browsers by configuring -> This is configured in config properties where we can mention the browser and then accordingly those browser would open up for testing.
+**Different browser:** Ability to run tests for different browsers by configuring in properties file. This is configured in config properties where we can mention the browser and then accordingly those browser would open up for testing.
+
+************************************************************************************************
 
 
 **Exercise4:** Automating a WebService
@@ -88,7 +101,7 @@ Ability to run tests for different browsers by configuring -> This is configured
 2. Since this is a Rest API , I shall use REST ASSURED library as that is the one for testing REST APIs
 3. We can save the expected response in json files so that we can use them for assert
 4. For authentication we can use mocking services library like wiremock
-5. We need to write the userjourneys in an excel or Jira so that we know what we are going to test with the expected output
+5. We need to write the user journeys in an excel or Jira so that we know what we are going to test with the expected output
 6. Look for the methods GET, PUT, POST, PATCH, DELETE and make sure depending on the end point the validation is covered
 7. Wherever possible we can chain the apis as well
 8. Make sure we assert the expected response code, response line, response object wherever applicable

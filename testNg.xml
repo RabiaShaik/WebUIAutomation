@@ -3,7 +3,7 @@
 <suite name="AutomationTask">
     <test name="Elsevier Ecommerce Application">
         <classes>
-            <class name="com.elsevier.RunCukesTest"></class>
+           <class name="com.elsevier.RunCukesTest"></class>
         </classes>
     </test>
 </suite>
