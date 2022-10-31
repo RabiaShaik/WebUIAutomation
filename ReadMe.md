@@ -1,4 +1,4 @@
-Excercise3:
+Exercise3:
 
 **UI Automation Tests**
 This project is for testing UI of an e-commerce web application using Java, 
