@@ -3,19 +3,12 @@ package com.elsevier.pageObjects;
 import com.elsevier.utilities.ReadConfig;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
-import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.*;
-
 import java.io.File;
-import java.time.Duration;
-import java.util.concurrent.TimeUnit;
+import java.io.IOException;
 
 public class BaseClass {
 
@@ -46,14 +39,15 @@ public class BaseClass {
         return driver;
     }
 
-    public static void launchUrl() {
+    public static void launchUrl() throws IOException{
         String baseURL = new ReadConfig().getBaseURL();
         driver.get(baseURL);
+        BaseClass.takeScreenshot();
     }
 
-    public static void takeScreenshot() throws Exception {
+    public static void takeScreenshot() throws IOException {
         File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(scrFile, new File("/screenshotFolder/screenshot.png"));
+        FileUtils.copyFile(scrFile, new File("screenshot.png"));
     }
 }
 

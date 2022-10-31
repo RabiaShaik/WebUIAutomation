@@ -67,7 +67,7 @@ Here are a below steps to get a human readable cucumberhtml report.
 4) Open the file in browser and view the results
 
 **Additional Info:**
-**Screenshot on failed tests:** Please find the screen shots of failed test cases here "/screenshotFolder/screenShots.png". Please note that, the screenshot will also be attached to the .html report.
+**Screenshot on failed tests:** Please find the screen shots of failed test cases here "screenShots.png". Please note that, the screenshot will also be attached to the .html report.
 
 
 **Bongarcia WebDriver Manager factory:** Consumed this so that we can avoid having the necessity of physical binaries.
@@ -118,6 +118,8 @@ However I have kept not used it as it is a small set of scenarios.
 6. Check for the request if instead of and condition if the request been passed as OR then how the response behaves
 7. Since it is a GET condition this call should be idempotent, hence set the idempotency key and see if that changes or not
 8. Check for the content type assert
+9. Test for status available and make sure it is showing 200 status code and it fetches value only for "available"
+10. Repeat for other two statuses
 
 **• What libraries would you use?**
 
