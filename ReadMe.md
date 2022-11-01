@@ -38,6 +38,10 @@ The below steps will get you a copy of the project up and running, on your local
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
+[INFO] Total time:  48.269 s
+[INFO] Finished at: 2022-10-31T22:40:15Z
+[INFO] ------------------------------------------------------------------------
+
 
 **Project Structure:**
 
@@ -123,9 +127,10 @@ However I have kept not used it as it is a small set of scenarios.
 
 **• What libraries would you use?**
 
-1. REST ASSURED
-2. JSON SIMPLE
-3. APACHE POI
-4. JUNIT
-5. WIREMOCK
-
+1. REST ASSURED (for testing rest apis)
+2. JSON SIMPLE (to validate the json response)
+3. APACHE POI (for data driven test cases)
+4. TestNg (to run the tests)
+5. WIREMOCK (to mock authentication and other responses)
+6. Cucumber (to write feature file)
+7. Cucumber reports

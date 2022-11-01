@@ -13,8 +13,8 @@ import org.testng.annotations.Test;
                 "pretty",
                 "html:target/cucumber-reports/cucumber-pretty",
                 "timeline:target/test-output-thread/",
-                "json:target/cucumber-report/cucumber.json",
-                "html:target/cucumber-report/cucumber.html"
+                "json:target/cucumber-reports/cucumber.json",
+                "html:target/cucumber-reports/cucumber.html"
         },
         tags = "@smoke",
         dryRun = false,
