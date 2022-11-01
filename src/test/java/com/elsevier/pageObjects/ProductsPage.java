@@ -5,9 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-
-import java.lang.reflect.Array;
-import java.text.NumberFormat;
 import java.time.Duration;
 import java.util.*;
 
